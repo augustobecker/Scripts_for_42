@@ -16,14 +16,14 @@
 #   And goto.sh will take you to this folder
 
    FOLDER=$1
-
+   
     GREEN="\033[0;32m"
       RED="\033[0;31m"
-	RESET="\033[0m"
-
+    RESET="\033[0m"
+    
 FIND_PATH=$(find . -type d -name ${FOLDER})
   RESULTS=$(find . -type d -name ${FOLDER} | wc -l)
 
   if [ ${RESULTS} -ge 2 ]; 	then echo -e ${RED}${RESULTS} folders found. Please, be more specific. ${RESET};	\
-elif [ ${RESULTS} == 0 ]; 	then echo -e ${RED} Not found. Please, try again. ${RESET};							\
-else 							 echo -e $GREEN "That's it! Here we go." $RESET && cd ${FIND_PATH} ; fi
+elif [ ${RESULTS} == 0 ]; 	then echo -e ${RED} Not found. Please, try again. ${RESET};				\
+else 				     echo -e $GREEN "That's it! Here we go." $RESET && cd ${FIND_PATH} ; fi
